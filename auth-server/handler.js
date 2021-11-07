@@ -110,7 +110,7 @@ module.exports.getAccessToken = async (event) => {
       redirect_uris[0]
     );
 
-    const access_token = decodeURIComponent(`${event.pathParameters.code}`);
+    const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
 
     oAuth2Client.setCredentials({ access_token });
 
@@ -132,15 +132,15 @@ module.exports.getAccessToken = async (event) => {
         }
       );
     })
-    .then(
+    .then((results) => {
+      return {
         statusCode: 200,
         headers: {
-          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Origin': '*'
         },
-        body: JSON.stringify({
-          access_token: access_token,
-        })
-    )
+        body: JSON.stringify({ events: results.data.items }),
+      };
+    })
     .catch((err) => {
       // Handle error
       console.error(err);
