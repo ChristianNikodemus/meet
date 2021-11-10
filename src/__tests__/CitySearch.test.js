@@ -16,5 +16,9 @@ describe('<CitySearch /> component', () => {
   test('renders a list of suggestions', () => {
     expect(CitySearchWrapper.find('.suggestions')).toHaveLength(1);
   });
-  
+
+  test('renders text input correctly', () => {
+    const query = CitySearchWrapper.state('query');
+    expect(CitySearchWrapper.find('.city').prop('value')).toBe(query);
+  });
 });
