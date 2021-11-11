@@ -25,4 +25,8 @@ describe("<Event /> component", () => {
     expect(eventWrapper.find(".start-date")).toHaveLength(1);
   });
 
+  test("renders location in the collapsed event element", () => {
+    expect(eventWrapper.find(".location")).toHaveLength(1);
+  });
+
 });
