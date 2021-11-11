@@ -20,6 +20,9 @@ describe("<Event /> component", () => {
   test("renders summary in the collapsed event element", () => {
     expect(eventWrapper.find(".summary")).toHaveLength(1);
   });
-  
+
+    test("renders date in the collapsed event element", () => {
+    expect(eventWrapper.find(".start-date")).toHaveLength(1);
+  });
 
 });
