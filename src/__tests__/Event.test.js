@@ -17,4 +17,9 @@ describe("<Event /> component", () => {
     expect(eventWrapper.find(".extra-details")).toHaveLength(0);
   });
 
+  test("renders summary in the collapsed event element", () => {
+    expect(eventWrapper.find(".summary")).toHaveLength(1);
+  });
+  
+
 });
