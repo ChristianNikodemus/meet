@@ -33,4 +33,12 @@ describe("<Event /> component", () => {
     expect(eventWrapper.find(".show-details-btn")).toHaveLength(1);
   });
 
+  test("clicking on show details button should show extra details", () => {
+    eventWrapper.setState({
+      collapsed: true,
+    });
+    eventWrapper.find(".show-details-btn").simulate("click");
+    expect(eventWrapper.state("collapsed")).toBe(false);
+  });
+
 });
