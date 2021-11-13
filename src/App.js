@@ -8,8 +8,7 @@ import { getEvents, extractLocations } from './api';
 class App extends Component {
   state = {
     locations: [],
-    events: [],
-    numberOfEvents: 12
+    events: []
   }
 
   updateEvents = (location) => {
@@ -36,28 +35,12 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEventCount = async (e) => {
-    const newVal = e.target.value ? parseInt(e.target.value) : 12;
-
-    if (newVal < 1 || newVal > 12) {
-      await this.setState({
-        errorText: "Please choose a number between 1 and 12",
-      });
-    } else {
-      await this.setState({
-        errorText: "",
-        numberOfEvents: newVal,
-      });
-      this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
-    }
-  };
-
   render() {
     return (
       <div className="App">
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
         <EventList events={this.state.events} />
-        <NumberOfEvents numberOfEvents={this.state.numberOfEvents} />
+        <NumberOfEvents />
       </div>
     );
   }
