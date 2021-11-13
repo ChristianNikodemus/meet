@@ -21,7 +21,7 @@ describe("<Event /> component", () => {
     expect(eventWrapper.find(".summary")).toHaveLength(1);
   });
 
-    test("renders date in the collapsed event element", () => {
+  test("renders date in the collapsed event element", () => {
     expect(eventWrapper.find(".start-date")).toHaveLength(1);
   });
 
@@ -48,5 +48,4 @@ describe("<Event /> component", () => {
     eventWrapper.find(".hide-details-btn").simulate("click");
     expect(eventWrapper.state("collapsed")).toBe(true);
   });
-
 });
