@@ -11,7 +11,7 @@ class NumberOfEvents extends Component {
            max={12}
           className="num-events"
           value={this.props.numberOfEvents}
-          //onChange={(e) => this.props.updateEventCount(e)}
+          onChange={(e) => this.props.updateEventCount(e)}
         />
       </div>
     );
