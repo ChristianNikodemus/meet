@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
@@ -70,13 +69,7 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateEventCount={this.updateEventCount}
         />
-        <Container>
-          <Row>
-            <Col md={6}>
-              <EventList events={this.state.events} />
-            </Col>
-          </Row>
-        </Container>
+        <EventList events={this.state.events} />
       </div>
     );
   }
