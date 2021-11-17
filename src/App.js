@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
@@ -12,6 +13,7 @@ class App extends Component {
     locations: [],
     events: [],
     numberOfEvents: 12,
+    errorText: "",
   };
 
   updateEvents = (location) => {
@@ -20,8 +22,9 @@ class App extends Component {
         location === "all"
           ? events
           : events.filter((event) => event.location === location);
+      const { numberOfEvents } = this.state;
       this.setState({
-        events: locationEvents,
+        events: locationEvents.slice(0, numberOfEvents),
       });
     });
   };
@@ -67,7 +70,13 @@ class App extends Component {
           numberOfEvents={this.state.numberOfEvents}
           updateEventCount={this.updateEventCount}
         />
-        <EventList events={this.state.events} />
+        <Container>
+          <Row>
+            <Col md={6}>
+              <EventList events={this.state.events} />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

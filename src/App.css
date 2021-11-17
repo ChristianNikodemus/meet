@@ -28,37 +28,11 @@
   color: #61dafb;
 }
 
-.NumberOfEvents {
-  display: flexbox;
-  align-items: left;
-  width: 40%;
-  background-color: #61dafb;
-  border-radius: 1em;
-  padding: 1em 0;
-  margin: 1em 0;
-}
-
-.events-text {
-  margin: 0 1em 1em 1em;
-}
-
-.description {
-  margin: 1em 0;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-/* When the browser is 400px and below */
-@media screen and (max-width: 724px) {
-  .NumberOfEvents {
-    margin: 1em auto;
-    width: 80%;
   }
 }
