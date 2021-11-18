@@ -6,9 +6,11 @@ import NumberOfEvents from "./NumberOfEvents";
 import Welcome from "./Welcome.js";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
+import { getAllByAltText } from "@testing-library/react";
 
 class App extends Component {
   state = {
+    currentLocation: "all",
     locations: [],
     events: [],
     numberOfEvents: 12,
@@ -23,6 +25,7 @@ class App extends Component {
           : events.filter((event) => event.location === location);
       const { numberOfEvents } = this.state;
       this.setState({
+        currentLocation: location,
         events: locationEvents.slice(0, numberOfEvents),
       });
     });
