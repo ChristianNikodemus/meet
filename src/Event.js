@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Button, Card } from "react-bootstrap";
-import moment from "moment";
-moment().format();
 
 class Event extends Component {
   state = {
@@ -18,6 +16,14 @@ class Event extends Component {
     const { event } = this.props;
     const { collapsed } = this.state;
 
+    const time = new Intl.DateTimeFormat("en-US", {
+      timeStyle: "long",
+    }).format(new Date(event.start.dateTime));
+
+    const date = new Intl.DateTimeFormat("en-US", {
+      dateStyle: "full",
+    }).format(new Date(event.start.dateTime));
+
     return (
       <Card className="event">
         <Card.Header as="h2" className="summary">
@@ -25,9 +31,8 @@ class Event extends Component {
         </Card.Header>
         <Card.Body>
           <Card.Text>
-            <p className="start-date">
-              Event Start Date: {/*moment()*/ event.start.dateTime}
-            </p>
+            <p className="start-date">Event date: {date}</p>
+            <p className="start-date">Event starts at: {time}</p>
             <p>Timezone: {event.start.timeZone}</p>
             <p className="location">Event location: {event.location}</p>
           </Card.Text>
