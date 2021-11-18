@@ -8,6 +8,27 @@ class CitySearch extends Component {
     showSuggestions: undefined,
   };
 
+  handleWindowClick(e) {
+    if (
+      this.state.showSuggestions &&
+      !(this.textInput.current && this.textInput.current.contains(e.target))
+    ) {
+      this.setState({
+        showSuggestions: false,
+      });
+    }
+  }
+
+  componentDidMount() {
+    this.handleWindowClickBound = this.handleWindowClick.bind(this);
+    this.textInput = React.createRef();
+    window.addEventListener("click", this.handleWindowClickBound);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("click", this.handleWindowClickBound);
+  }
+
   handleInputChanged = (event) => {
     const value = event.target.value;
     const suggestions = this.props.locations.filter((location) => {
@@ -30,7 +51,7 @@ class CitySearch extends Component {
 
   render() {
     return (
-      <div className="CitySearch">
+      <div className="CitySearch" ref={this.textInput}>
         <Form.Control
           size="lg"
           type="text"
