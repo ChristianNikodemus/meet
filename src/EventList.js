@@ -8,15 +8,15 @@ class EventList extends Component {
     return (
       <Container>
         <Row className="d-flex justify-content-center">
-          <Col md={6}>
-            <ul className="EventList">
-              {events.map((event) => (
+          <ul className="EventList d-flex justify-content-center">
+            {events.map((event) => (
+              <Col md={6}>
                 <li key={event.id}>
                   <Event event={event} />
                 </li>
-              ))}
-            </ul>
-          </Col>
+              </Col>
+            ))}
+          </ul>
         </Row>
       </Container>
     );

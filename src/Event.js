@@ -33,7 +33,7 @@ class Event extends Component {
           </Card.Text>
           <Button
             variant="primary"
-            className={`${collapsed ? "show" : "hide"}-details-btn`}
+            className={`${collapsed ? "show" : "hide"} details-btn`}
             onClick={this.handleClick}
           >
             {collapsed ? "Show Details" : "Hide Details"}
