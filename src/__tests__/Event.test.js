@@ -30,14 +30,14 @@ describe("<Event /> component", () => {
   });
 
   test("renders a button to show details", () => {
-    expect(eventWrapper.find(".show-details-btn")).toHaveLength(1);
+    expect(eventWrapper.find(".show.details-btn")).toHaveLength(1);
   });
 
   test("clicking on show details button should show extra details", () => {
     eventWrapper.setState({
       collapsed: true,
     });
-    eventWrapper.find(".show-details-btn").simulate("click");
+    eventWrapper.find(".show.details-btn").simulate("click");
     expect(eventWrapper.state("collapsed")).toBe(false);
   });
 
@@ -45,7 +45,7 @@ describe("<Event /> component", () => {
     eventWrapper.setState({
       collapsed: false,
     });
-    eventWrapper.find(".hide-details-btn").simulate("click");
+    eventWrapper.find(".hide.details-btn").simulate("click");
     expect(eventWrapper.state("collapsed")).toBe(true);
   });
 });

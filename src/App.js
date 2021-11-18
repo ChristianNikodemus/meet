@@ -6,7 +6,6 @@ import NumberOfEvents from "./NumberOfEvents";
 import Welcome from "./Welcome.js";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
-import { getAllByAltText } from "@testing-library/react";
 
 class App extends Component {
   state = {
