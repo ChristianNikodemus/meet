@@ -121,6 +121,11 @@ input[type="number"] {
   transition: all 200ms ease-in 0s;
 }
 
+.event:hover {
+  transition: all 200ms ease-in 0s;
+  transform: scale(1.01);
+}
+
 .numberOfEvents {
   width: 40%;
   margin: 1em auto;
@@ -135,11 +140,6 @@ input[type="number"] {
 .description {
   margin: 1em 0;
   overflow-x: hidden;
-}
-
-.event:hover {
-  transition: all 200ms ease-in 0s;
-  transform: scale(1.01);
 }
 
 .details-btn {
@@ -162,6 +162,7 @@ input[type="number"] {
 }
 
 .details-btn:hover {
+  transition: all 50ms ease-in 0s;
   opacity: 0.8;
   /* -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
