@@ -7,9 +7,9 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(
@@ -18,6 +18,10 @@ body {
     )
     0% 0% / 100% 248px no-repeat;
   background-repeat: no-repeat;
+}
+
+strong {
+  font-weight: 700;
 }
 
 code {
@@ -73,12 +77,15 @@ input[type="number"] {
 }
 
 .suggestions {
-  width: 250px;
-  position: absolute;
-  z-index: 2;
+  position: relative;
+  width: 80%;
+  top: 0px !important;
+  left: 0px !important;
+  /* position: absolute; */
+  /* z-index: 2; */
   align-self: center;
-  margin: 0;
-  top: 43px;
+  /* margin: 0; */
+  /* top: 43px; */
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
@@ -106,6 +113,28 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: var(--border-radius);
   position: relative;
+  transition: all 200ms ease-in 0s;
+}
+
+.numberOfEvents {
+  width: 40%;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.events-text {
+  font-size: 1.2em;
+  /* margin: 1em 1em; */
+}
+
+.description {
+  margin: 1em 0;
+  overflow-x: hidden;
+}
+
+.event:hover {
+  transition: all 200ms ease-in 0s;
+  transform: scale(1.01);
 }
 
 .details-btn {
@@ -129,9 +158,9 @@ input[type="number"] {
 
 .details-btn:hover {
   opacity: 0.8;
-  -webkit-transform: scale(1.05);
+  /* -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
-  transform: scale(1.05);
+  transform: scale(1.05); */
 }
 
 .name {
@@ -147,16 +176,6 @@ input[type="number"] {
 .going,
 .visibility {
   font-style: italic;
-}
-
-.description {
-  overflow-x: hidden;
-}
-
-.numberOfEvents {
-  width: 200px;
-  margin: 20px auto;
-  text-align: center;
 }
 
 .button-wrapper {
@@ -235,25 +254,6 @@ input[type="number"] {
   font-size: 14px;
   letter-spacing: 0.2px;
   font-family: "Roboto";
-}
-
-.NumberOfEvents {
-  color: white;
-  display: flexbox;
-  align-items: left;
-  width: 40%;
-  background-color: var(--accent-color);
-  border-radius: var(--border-radius);
-  padding: 1em 0;
-  margin: 1em 0;
-}
-
-.events-text {
-  margin: 0 1em 1em 1em;
-}
-
-.description {
-  margin: 1em 0;
 }
 
 @media only screen and (min-width: 992px) {
