@@ -1,7 +1,12 @@
 :root {
-  --light-bg: #f7ede2;
-  --accent-color: #1a659e;
-  --darker-accent-color: #004e89;
+  /* Colour Palette */
+  --orange: #ff6b35;
+  --peach: #f7c59f;
+  --light-yellow: #efefd0;
+  --blue: #1a659e;
+  --dark-blue: #004e89;
+
+  /* Other stylings */
   --border-radius: 4px;
 }
 
@@ -144,7 +149,7 @@ input[type="number"] {
   bottom: 5px;
   padding: 5px 8px;
   border-radius: var(--border-radius);
-  background-color: var(--darker-accent-color);
+  background-color: var(--dark-blue);
   /* Transitions */
   -webkit-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
