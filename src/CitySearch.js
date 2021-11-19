@@ -55,7 +55,7 @@ class CitySearch extends Component {
         <Form.Control
           size="lg"
           type="text"
-          className="city"
+          className="searchBar"
           value={this.state.query}
           onChange={this.handleInputChanged}
           onFocus={() => {
