@@ -22,7 +22,7 @@ describe("<Event /> component", () => {
   });
 
   test("renders date in the collapsed event element", () => {
-    expect(eventWrapper.find(".start-date")).toHaveLength(1);
+    expect(eventWrapper.find(".start-date")).toHaveLength(2);
   });
 
   test("renders location in the collapsed event element", () => {
