@@ -5,7 +5,7 @@ class Welcome extends React.Component {
     return (
       <>
         <h1>
-          Hello, Welcome to <strong>Meet</strong>!
+          Hello, welcome to <strong className="meet-logo">Meet</strong>
         </h1>
         <p className="description">
           A web application designed to connect people together.

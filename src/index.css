@@ -53,6 +53,16 @@ p {
   margin: 5px 0;
 }
 
+.meet-logo {
+  transition: all 200ms ease-in 0s;
+  letter-spacing: 8px;
+}
+
+.meet-logo:hover {
+  transition: all 200ms ease-in 0s;
+  letter-spacing: normal;
+}
+
 .display-none {
   display: none;
 }
