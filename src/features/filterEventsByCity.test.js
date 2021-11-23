@@ -14,12 +14,19 @@ defineFeature(feature, (test) => {
   }) => {
     given("user hasn’t searched for any city", () => {});
 
-    when("the user opens the app", () => {});
-
-    then('the user should see the list of upcoming events from all locations', () => {
-      AppWrapper.update();
-      expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
+    let AppWrapper;
+    when("the user opens the app", () => {
+      AppWrapper = mount(<App />);
     });
+
+    then(
+      "the user should see the list of upcoming events from all locations",
+      () => {
+        AppWrapper.update();
+        expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
+      }
+    );
+  });
 
   test("User should see a list of suggestions when they search for a city", ({
     given,

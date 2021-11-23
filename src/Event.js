@@ -36,13 +36,6 @@ class Event extends Component {
             <p>Timezone: {event.start.timeZone}</p>
             <p className="location">Event location: {event.location}</p>
           </Card.Text>
-          <Button
-            variant="primary"
-            className={`${collapsed ? "show" : "hide"} details-btn`}
-            onClick={this.handleClick}
-          >
-            {collapsed ? "Show Details" : "Hide Details"}
-          </Button>
           {!collapsed && (
             <div
               className={`extra-details ${
@@ -57,6 +50,15 @@ class Event extends Component {
             </div>
           )}
         </Card.Body>
+        <Card.Footer>
+          <Button
+            variant="primary"
+            className={`${collapsed ? "show" : "hide"} details-btn`}
+            onClick={this.handleClick}
+          >
+            {collapsed ? "Show Details" : "Hide Details"}
+          </Button>
+        </Card.Footer>
       </Card>
     );
   }
