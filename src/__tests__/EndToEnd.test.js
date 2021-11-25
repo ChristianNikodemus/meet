@@ -7,7 +7,7 @@ describe("show/hide an event details", () => {
   let browser;
   let page;
   beforeAll(async () => {
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
       headless: false,
       slowMo: 250, // slow down by 250ms
       ignoreDefaultArgs: ["--disable-extensions"], // ignores default setting that causes timeout errors
