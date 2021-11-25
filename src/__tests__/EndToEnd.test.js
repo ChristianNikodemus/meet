@@ -21,6 +21,13 @@ describe("show/hide an event details", () => {
     browser.close();
   });
 
+  // Feature 1: Filter Events by City
+  // Senario 1
+
+  // Senario 2
+
+  // Senario 3
+
   // Feature 2: Show/Hide an Event's Details
   // Senario 1
   test("An event element is collapsed by default", async () => {
