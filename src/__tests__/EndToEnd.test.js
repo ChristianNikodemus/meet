@@ -1,11 +1,12 @@
 import puppeteer from "puppeteer";
 
+jest.setTimeout(30000);
+
 // Feature 2: Show/hide an event details
 describe("show/hide an event details", () => {
   let browser;
   let page;
   beforeAll(async () => {
-    jest.setTimeout(30000);
     const browser = await puppeteer.launch({
       headless: false,
       slowMo: 250, // slow down by 250ms
@@ -20,6 +21,7 @@ describe("show/hide an event details", () => {
     browser.close();
   });
 
+  // Feature 2: Show/Hide an Event's Details
   // Senario 1
   test("An event element is collapsed by default", async () => {
     const eventDetails = await page.$(".event .event__Details");
