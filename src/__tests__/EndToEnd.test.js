@@ -14,7 +14,7 @@ describe("show/hide an event details", () => {
     });
     page = await browser.newPage();
     await page.goto("http://localhost:3002/");
-    await page.waitForSelector(".event");
+    await page.waitForSelector(".event-card");
   });
 
   afterAll(() => {
@@ -31,21 +31,21 @@ describe("show/hide an event details", () => {
   // Feature 2: Show/Hide an Event's Details
   // Senario 1
   test("An event element is collapsed by default", async () => {
-    const eventDetails = await page.$(".event .event__Details");
+    const eventDetails = await page.$(".event-card .event__Details");
     expect(eventDetails).toBeNull();
   });
 
   // Senario 2
   test("User can expand an event to see its details", async () => {
-    await page.click(".event .details-btn");
-    const eventDetails = await page.$(".event .event__Details");
+    await page.click(".event-card .details-btn");
+    const eventDetails = await page.$(".event-card .event__Details");
     expect(eventDetails).toBeDefined();
   });
 
   // Senario 3
   test("User can collapse an event to hide its details", async () => {
-    await page.click(".event .details-btn");
-    const eventDetails = await page.$(".event .event__Details");
+    await page.click(".event-card .details-btn");
+    const eventDetails = await page.$(".event-card .event__Details");
     expect(eventDetails).toBeNull();
   });
 });

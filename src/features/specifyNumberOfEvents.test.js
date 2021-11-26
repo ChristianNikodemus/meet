@@ -25,7 +25,7 @@ defineFeature(feature, (test) => {
     });
 
     then("the default amount of events will be shown", () => {
-      expect(AppWrapper.find(".event")).toHaveLength(4);
+      expect(AppWrapper.find(".event-card")).toHaveLength(4);
     });
   });
 
@@ -49,7 +49,7 @@ defineFeature(feature, (test) => {
     });
 
     then("the specified number of events is displayed", () => {
-      expect(AppWrapper.find(".event")).toHaveLength(4);
+      expect(AppWrapper.find(".event-card")).toHaveLength(4);
     });
   });
 });
