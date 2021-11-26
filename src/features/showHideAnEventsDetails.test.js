@@ -38,7 +38,7 @@ defineFeature(feature, (test) => {
     when("the user clicks on an individual event", () => {
       AppWrapper.update();
       let Event = AppWrapper.find(".event");
-      Event.find(".extra-details").at(0).simulate("click");
+      Event.find(".show").at(0).simulate("click");
     });
 
     then("the event details will be displayed.", () => {
@@ -63,7 +63,7 @@ defineFeature(feature, (test) => {
     when("a user has clicked “minimize”", () => {
       AppWrapper.update();
       let Event = AppWrapper.find(".event");
-      Event.find(".show-more").at(0).simulate("click");
+      Event.find(".show").at(0).simulate("click");
     });
 
     then("the event details will be hidden.", () => {
