@@ -121,7 +121,7 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.event {
+.event-card {
   margin-bottom: 1em;
   text-align: left;
   border: 1px solid #ccc;
@@ -130,7 +130,7 @@ input[type="number"] {
   transition: all 200ms ease-in 0s;
 }
 
-.event:hover {
+.event-card:hover {
   transition: all 200ms ease-in 0s;
   transform: scale(1.01);
 }
@@ -146,7 +146,7 @@ input[type="number"] {
   /* margin: 1em 1em; */
 }
 
-.event .card-footer {
+.event-card .card-footer {
   display: flex;
   justify-content: end;
 }

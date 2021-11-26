@@ -25,7 +25,7 @@ class Event extends Component {
     }).format(new Date(event.start.dateTime));
 
     return (
-      <Card className="event">
+      <Card className="event-card">
         <Card.Header as="h2" className="summary">
           {event.summary}
         </Card.Header>
