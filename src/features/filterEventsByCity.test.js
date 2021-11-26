@@ -20,7 +20,7 @@ defineFeature(feature, (test) => {
       AppWrapper = mount(<App />);
     });
 
-    then("the user should see the list of upcoming events", () => {
+    then("the user should see the list of upcoming events.", () => {
       AppWrapper.update();
       expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
     });
@@ -32,6 +32,7 @@ defineFeature(feature, (test) => {
     then,
   }) => {
     let CitySearchWrapper;
+    let locations;
     given("the main page is open", () => {
       CitySearchWrapper = shallow(
         <CitySearch updateEvents={() => {}} locations={locations} />
@@ -39,7 +40,7 @@ defineFeature(feature, (test) => {
     });
 
     when("the user starts typing in the city textbox", () => {
-      CitySearchWrapper.find(".city").simulate("change", {
+      CitySearchWrapper.find(".searchBar").simulate("change", {
         target: { value: "Berlin" },
       });
     });
