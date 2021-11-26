@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form } from "react-bootstrap";
+import { InfoAlert } from "./Alert";
 
 class CitySearch extends Component {
   state = {
@@ -52,6 +53,7 @@ class CitySearch extends Component {
   render() {
     return (
       <div className="CitySearch" ref={this.textInput}>
+        <InfoAlert text={this.state.infoText} />
         <Form.Control
           size="lg"
           type="text"
