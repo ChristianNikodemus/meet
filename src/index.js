@@ -27,5 +27,6 @@ serviceWorkerRegistration.unregister();
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-// This throws a test to Atatus to see if it's integrated correctly
+// My Atatus account can be found here: www.atatus.com/accounts
+// This code below throws a test to Atatus to see if it's integrated correctly
 //atatus.notify(new Error("Test Atatus Setup"));
