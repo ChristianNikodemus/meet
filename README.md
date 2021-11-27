@@ -72,21 +72,21 @@ So that I can choose to see more information about the event but not have the ad
 
 ##### Scenario 1: An event element is collapsed by default.
 
-Given a user has searched for a city and found a list of events.
-When a list of events is returned to the user.
-Then the user should see the event details collapsed by default to save space on their browser.
+Given a user is on the main page,
+When an event is displayed
+Then event details will be collapsed.
 
 ##### Scenario 2: User can expand an event to see its details.
 
-Given the list of events is returned to the user.
-When the user clicks a button to expand the details of the event.
-Then the event will expand to show the user more details about the event.
+Given a user has list of events
+When the user clicks on an individual event
+Then the event details will be displayed.
 
 ##### Scenario 3: User can collapse an event to hide its details
 
-Given the user has expanded the details for an event
-When the user clicks the button to collapse the details of the event.
-Then the event details will be hidden from view from the user.
+Given a user has expanded an individual event,
+When a user has clicked “minimize”
+Then the event details will be hidden.
 
 #### Feature 3: Specify Number of Events
 
@@ -94,17 +94,17 @@ As a user.
 I should be able to specify the number of events I want to see in the list of returned events.
 So that I do not get overwhelmed with the amount of events within the list at one time.
 
-##### Scenario 1: When the user hasn’t specified a number, 32 is the default number.
+##### Scenario 1: When the user hasn’t specified a number, 12 is the default number.
 
-Given the user has opened the app.
-When a list is returned to the user.
-Then only 32 events will be shown to the user to start off.
+Given a user is on the main page
+When the user hasn’t specified a number of events
+Then the default amount of events will be shown
 
 ##### Scenario 2: User can change the number of events they want to see.
 
-Given the user has opened the app.
-When the user selects the specified number of events they’d like to see.
-Then the list will show the amount of events depending on that specified number.
+Given a user is on the main page
+When a user specifies the number of events
+Then the specified number of events is displayed
 
 #### Feature 4: Use the App When Offline
 
