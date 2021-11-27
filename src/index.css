@@ -79,21 +79,18 @@ input[type="number"] {
   align-self: center;
 }
 
-.searchBar {
-  width: 80%;
-}
-
 .CitySearch {
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
   margin: auto;
   position: relative;
+  width: 80%;
 }
 
 .suggestions {
   position: relative;
-  width: 80%;
+  width: 100%;
   top: 0px !important;
   left: 0px !important;
   /* position: absolute; */
