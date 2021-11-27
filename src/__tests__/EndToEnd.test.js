@@ -30,6 +30,7 @@ describe("show/hide an event details", () => {
 
   // Feature 2: Show/Hide an Event's Details
   // Senario 1
+
   test("An event element is collapsed by default", async () => {
     const eventDetails = await page.$(".event-card .event__Details");
     expect(eventDetails).toBeNull();

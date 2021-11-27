@@ -22,7 +22,7 @@ defineFeature(feature, (test) => {
 
     then("the user should see the list of upcoming events.", () => {
       AppWrapper.update();
-      expect(AppWrapper.find(".event-card")).toHaveLength(mockData.length);
+      expect(AppWrapper.find("div.event-card")).toHaveLength(mockData.length);
     });
   });
 
@@ -32,7 +32,7 @@ defineFeature(feature, (test) => {
     then,
   }) => {
     let CitySearchWrapper;
-    let locations;
+    let locations = ["Berlin, Germany"];
     given("the main page is open", () => {
       CitySearchWrapper = shallow(
         <CitySearch updateEvents={() => {}} locations={locations} />
@@ -62,7 +62,7 @@ defineFeature(feature, (test) => {
     let AppWrapper;
     given("user was typing “Berlin” in the city textbox", async () => {
       AppWrapper = await mount(<App />);
-      AppWrapper.find(".searchBar").simulate("change", {
+      AppWrapper.find("input.searchBar").simulate("change", {
         target: { value: "Berlin" },
       });
     });
@@ -90,7 +90,7 @@ defineFeature(feature, (test) => {
     and(
       "the user should receive a list of upcoming events in that city",
       () => {
-        expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
+        expect(AppWrapper.find("div.event-card")).toHaveLength(mockData.length);
       }
     );
   });
