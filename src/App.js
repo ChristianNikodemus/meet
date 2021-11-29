@@ -13,7 +13,6 @@ class App extends Component {
     locations: [],
     events: [],
     numberOfEvents: 12,
-    errorText: "",
   };
 
   updateEvents = (location) => {
@@ -46,17 +45,10 @@ class App extends Component {
   updateEventCount = async (e) => {
     const newVal = e.target.value ? parseInt(e.target.value) : 12;
 
-    if (newVal < 1 || newVal > 12) {
-      await this.setState({
-        errorText: "Please choose a number between 1 and 12",
-      });
-    } else {
-      await this.setState({
-        errorText: "",
-        numberOfEvents: newVal,
-      });
-      this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
-    }
+    this.setState({
+      numberOfEvents: newVal,
+    });
+    this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
   };
 
   render() {
