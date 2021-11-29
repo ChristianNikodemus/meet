@@ -4,7 +4,7 @@ class Welcome extends React.Component {
   render() {
     return (
       <>
-        <h1>
+        <h1 className="welcome-title">
           Hello, welcome to <strong className="meet-logo">Meet</strong>
         </h1>
         <h4 className="description">
