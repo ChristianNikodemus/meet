@@ -7,9 +7,9 @@ class Welcome extends React.Component {
         <h1>
           Hello, welcome to <strong className="meet-logo">Meet</strong>
         </h1>
-        <p className="description">
+        <h4 className="description">
           A web application designed to connect people together.
-        </p>
+        </h4>
       </>
     );
   }
