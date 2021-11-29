@@ -59,12 +59,12 @@ p {
   transition: all 200ms ease-in 0s;
   letter-spacing: 8px;
   color: var(--blue);
-  filter: drop-shadow(0px 0px 8px);
 }
 
 .meet-logo:hover {
   transition: all 200ms ease-in 0s;
   letter-spacing: normal;
+  color: var(--orange);
 }
 
 .display-none {
