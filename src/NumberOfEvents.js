@@ -21,22 +21,24 @@ class NumberOfEvents extends Component {
         errorText: "",
       });
     }
-    this.props.updateNumberOfEvents(event.target.value);
+    this.props.updateEventCount(event.target.value);
   };
 
   render() {
     return (
-      <div className="numberOfEvents">
-        <p className="events-text">Number of events:</p>
-        <Form.Control
-          type="number"
-          name="number"
-          className="num-events"
-          value={this.props.numberOfEvents}
-          onChange={(e) => this.props.updateEventCount(e)}
-          placeholder="12"
-        />
+      <div className="num-events-container">
         <ErrorAlert text={this.state.errorText} />
+        <div className="numberOfEvents">
+          <p className="events-text">Number of events:</p>
+          <Form.Control
+            type="number"
+            name="number"
+            className="num-events"
+            value={this.props.numberOfEvents}
+            onChange={(e) => this.handleInputChanged(e)}
+            placeholder="12"
+          />
+        </div>
       </div>
     );
   }

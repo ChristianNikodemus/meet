@@ -132,8 +132,11 @@ input[type="number"] {
   transform: scale(1.01);
 }
 
-.numberOfEvents {
+.num-events-container {
   margin: 1em auto;
+}
+
+.numberOfEvents {
   text-align: center;
   display: inline-flex;
 }
