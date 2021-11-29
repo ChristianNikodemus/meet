@@ -26,7 +26,7 @@ class Event extends Component {
 
     return (
       <Card className="event-card">
-        <Card.Header as="h2" className="summary">
+        <Card.Header as="h3" className="summary">
           {event.summary}
         </Card.Header>
         <Card.Body>
