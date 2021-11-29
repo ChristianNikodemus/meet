@@ -5,6 +5,7 @@
   --light-yellow: #efefd0;
   --blue: #1a659e;
   --dark-blue: #004e89;
+  --very-dark-blue: #002a4a;
 
   /* Other stylings */
   --border-radius: 8px;
@@ -23,6 +24,7 @@ body {
     )
     0% 0% / 100% 248px no-repeat;
   background-repeat: no-repeat;
+  color: var(--very-dark-blue);
 }
 
 strong {
@@ -56,6 +58,8 @@ p {
 .meet-logo {
   transition: all 200ms ease-in 0s;
   letter-spacing: 8px;
+  color: var(--blue);
+  filter: drop-shadow(0px 0px 8px);
 }
 
 .meet-logo:hover {
