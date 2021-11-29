@@ -133,9 +133,17 @@ input[type="number"] {
 }
 
 .numberOfEvents {
-  width: 40%;
   margin: 1em auto;
   text-align: center;
+  display: inline-flex;
+}
+
+.events-text {
+  margin-right: 0.5em;
+}
+
+.num-events {
+  width: 5em;
 }
 
 .events-text {
