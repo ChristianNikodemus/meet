@@ -9,6 +9,8 @@
 
   /* Other stylings */
   --border-radius: 8px;
+  --box-shadow: 0 2px 8px 1px rgb(64 60 67 / 14%);
+  --border-radius-buttcap: 24px;
 }
 
 body {
@@ -76,11 +78,11 @@ p {
 
 input[type="text"],
 input[type="number"] {
-  padding: 8px 6px 8px 10px;
-  border-radius: var(--border-radius);
+  padding: 0.5em 1em;
   outline: none;
   border: 1px solid #ccc;
   align-self: center;
+  box-shadow: var(--box-shadow);
 }
 
 .CitySearch {
@@ -90,6 +92,11 @@ input[type="number"] {
   margin: auto;
   position: relative;
   width: 80%;
+}
+
+.searchBar {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius-buttcap);
 }
 
 .suggestions {
@@ -102,21 +109,21 @@ input[type="number"] {
   align-self: center;
   /* margin: 0; */
   /* top: 43px; */
-  font-size: 14px;
-  box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
 }
 
 .suggestions > li {
   text-align: left;
-  padding: 8px 6px 8px 10px;
+  padding: 0.5em 1.5em;
   background-color: #eee;
   cursor: default;
+  border-radius: var(--border-radius-buttcap);
+  box-shadow: var(--box-shadow);
 }
 
-.suggestions > li:last-child {
+/* .suggestions > li:last-child {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-}
+} */
 
 .suggestions > li:hover {
   background-color: #bcdcdb;
@@ -129,6 +136,15 @@ input[type="number"] {
   border-radius: var(--border-radius);
   position: relative;
   transition: all 200ms ease-in 0s;
+  box-shadow: var(--box-shadow);
+}
+
+.card-header {
+  padding: 0.5em 1em;
+}
+
+.card-body {
+  padding: 0.5em 3em;
 }
 
 .event-card:hover {
@@ -151,6 +167,8 @@ input[type="number"] {
 
 .num-events {
   width: 5em;
+  padding-left: 4em;
+  border-radius: var(--border-radius-buttcap);
 }
 
 .events-text {
@@ -161,6 +179,7 @@ input[type="number"] {
 .event-card .card-footer {
   display: flex;
   justify-content: end;
+  padding: 0.5em 2em;
 }
 
 .description {
