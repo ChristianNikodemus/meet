@@ -126,7 +126,8 @@ input[type="number"] {
 } */
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  /* background-color: #bcdcdb; */
+  background-color: var(--peach);
 }
 
 .event-card {
