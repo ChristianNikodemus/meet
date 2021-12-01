@@ -43,11 +43,13 @@ class App extends Component {
   }
 
   updateEventCount = async (e) => {
-    const newVal = e.target.value ? parseInt(e.target.value) : 12;
+    const newVal = e ? parseInt(e) : undefined;
 
     this.setState({
       numberOfEvents: newVal,
     });
+
+    if (!e) return;
     this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
   };
 
