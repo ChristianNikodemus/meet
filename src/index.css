@@ -183,8 +183,12 @@ input[type="number"] {
   padding: 0.5em 2em;
 }
 
-.description {
+.slogan {
   margin: 1em 0;
+}
+
+.event-description {
+  overflow-x: hidden;
 }
 
 .details-btn {
