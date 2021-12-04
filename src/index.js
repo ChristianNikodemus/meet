@@ -8,7 +8,6 @@ import reportWebVitals from "./reportWebVitals";
 
 // Atatus (Application Performance Monitoring software)
 import * as atatus from "atatus-spa";
-atatus.config("1ffb7b4fc884435d885a81ef15360b99").install();
 
 ReactDOM.render(
   <React.StrictMode>
@@ -31,3 +30,4 @@ reportWebVitals();
 // My Atatus account can be found here: www.atatus.com/accounts
 // This code below throws a test to Atatus to see if it's integrated correctly
 //atatus.notify(new Error("Test Atatus Setup"));
+atatus.config("1ffb7b4fc884435d885a81ef15360b99").install();
