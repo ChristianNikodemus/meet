@@ -9,6 +9,8 @@ const EventGenre = ({ events }) => {
   //   { name: "Group D", value: 200 },
   // ];
 
+  const COLORS = ["#1a659e", "#ff6b35", "#004e89", "#f7c59f", "#efefd0"];
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -46,7 +48,11 @@ const EventGenre = ({ events }) => {
           label={({ name, percent }) =>
             `${name} ${(percent * 100).toFixed(0)}%`
           }
-        ></Pie>
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
       </PieChart>
     </ResponsiveContainer>
   );
