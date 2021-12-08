@@ -34,7 +34,7 @@ class NumberOfEvents extends Component {
       <div className="num-events-container">
         <ErrorAlert text={this.state.errorText} />
         <div className="numberOfEvents">
-          <p className="events-text">Number of events:</p>
+          <h5 className="events-text">Number of events:</h5>
           <Form.Control
             type="number"
             name="number"

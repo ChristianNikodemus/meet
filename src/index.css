@@ -163,6 +163,7 @@ input[type="number"] {
 }
 
 .events-text {
+  margin: auto;
   margin-right: 0.5em;
 }
 
@@ -170,11 +171,6 @@ input[type="number"] {
   width: 5em;
   padding-left: 4em;
   border-radius: var(--border-radius-buttcap);
-}
-
-.events-text {
-  font-size: 1.2em;
-  /* margin: 1em 1em; */
 }
 
 .event-card .card-footer {

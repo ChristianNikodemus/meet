@@ -4,6 +4,7 @@ import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import Welcome from "./Welcome.js";
+import EventGenre from "./EventGenre";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
 import {
@@ -77,30 +78,33 @@ class App extends Component {
           updateEvents={this.updateEvents}
         />
         <NumberOfEvents updateEventCount={this.updateEventCount} />
+        <div className="data-vis-wrapper">
+          {/* <p>Genre of events</p> */}
+          <EventGenre events={this.state.events} />
 
-        <h4>Events in each city</h4>
-
-        <ResponsiveContainer height={400}>
-          <ScatterChart
-            margin={{
-              top: 20,
-              right: 40,
-              bottom: 20,
-              left: 0,
-            }}
-          >
-            <CartesianGrid />
-            <XAxis type="category" dataKey="city" name="city" />
-            <YAxis
-              type="number"
-              dataKey="number"
-              name="number of events"
-              allowDecimals={false}
-            />
-            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
-          </ScatterChart>
-        </ResponsiveContainer>
+          {/* <p>Events in each city</p> */}
+          <ResponsiveContainer height={400}>
+            <ScatterChart
+              margin={{
+                top: 20,
+                right: 40,
+                bottom: 20,
+                left: 0,
+              }}
+            >
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis
+                type="number"
+                dataKey="number"
+                name="number of events"
+                allowDecimals={false}
+              />
+              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+              <Scatter data={this.getData()} fill="#8884d8" />
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
 
         <EventList
           events={this.state.events.slice(0, this.state.numberOfEvents)}
