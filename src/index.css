@@ -250,6 +250,7 @@ input[type="number"] {
 .data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
+  justify-content: center;
 }
 .recharts-surface {
   overflow: visible;
