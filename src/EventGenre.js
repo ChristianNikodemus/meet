@@ -9,7 +9,7 @@ const EventGenre = ({ events }) => {
   //   { name: "Group D", value: 200 },
   // ];
 
-  const COLORS = ["#1a659e", "#ff6b35", "#004e89", "#f7c59f", "#efefd0"];
+  const COLORS = ["#289FFA", "#ff6b35", "#004e89", "#C79E7F", "#D6D6BA"];
 
   const [data, setData] = useState([]);
 
