@@ -9,7 +9,14 @@ const EventGenre = ({ events }) => {
   //   { name: "Group D", value: 200 },
   // ];
 
-  const COLORS = ["#FF4A62", "#ff6b35", "#73CCFF", "#FF9E1C", "#57FA79"];
+  const COLORS = [
+    "#FF4A62",
+    "#ff6b35",
+    "#73CCFF",
+    "#FF9E1C",
+    "#57FA79",
+    "#A273FF",
+  ];
 
   const [data, setData] = useState([]);
 
@@ -18,7 +25,14 @@ const EventGenre = ({ events }) => {
   }, [events]);
 
   const getData = () => {
-    const genres = ["React", "JavaScript", "Node", "jQuery", "AngularJS"];
+    const genres = [
+      "React",
+      "JavaScript",
+      "Node",
+      "jQuery",
+      "AngularJS",
+      "Angular",
+    ];
     const data = genres.reduce((acc, genre) => {
       const value = events.filter((event) =>
         event.summary.split(" ").includes(genre)
