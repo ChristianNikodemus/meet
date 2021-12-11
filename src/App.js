@@ -6,6 +6,7 @@ import NumberOfEvents from "./NumberOfEvents";
 import Welcome from "./Welcome.js";
 import EventGenre from "./EventGenre";
 import EventNumber from "./EventNumber";
+import { WarningAlert } from "./Alert";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
 
@@ -54,7 +55,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        {!navigator.onLine && <p>Not online</p>}
+        {!navigator.onLine ? (
+          <WarningAlert text="You are offline!" />
+        ) : (
+          <WarningAlert text=" " />
+        )}
         <Welcome />
         <CitySearch
           locations={this.state.locations}
