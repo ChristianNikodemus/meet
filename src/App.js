@@ -50,8 +50,11 @@ class App extends Component {
   };
 
   render() {
+    const events = this.state.events.slice(0, this.state.numberOfEvents);
+
     return (
       <div className="App">
+        {!navigator.onLine && <p>Not online</p>}
         <Welcome />
         <CitySearch
           locations={this.state.locations}
@@ -60,18 +63,13 @@ class App extends Component {
         <NumberOfEvents updateEventCount={this.updateEventCount} />
         <div className="data-vis-wrapper">
           {/* <p>Genre of events</p> */}
-          <EventGenre events={this.state.events} />
+          <EventGenre events={events} />
 
           {/* <p>Events in each city</p> */}
-          <EventNumber
-            events={this.state.events}
-            locations={this.state.locations}
-          />
+          <EventNumber events={events} locations={this.state.locations} />
         </div>
 
-        <EventList
-          events={this.state.events.slice(0, this.state.numberOfEvents)}
-        />
+        <EventList events={events} />
       </div>
     );
   }
