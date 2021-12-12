@@ -24,6 +24,17 @@ class App extends Component {
       if (this.mounted) {
         this.setState({ events, locations: extractLocations(events) });
       }
+
+      if (!navigator.onLine) {
+        this.setState({
+          warningText: "You are offline!",
+        });
+        console.log("offline mode");
+      } else {
+        this.setState({
+          warningText: "",
+        });
+      }
     });
   }
 
@@ -55,12 +66,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        {!navigator.onLine ? (
-          <WarningAlert text="You are offline!" />
-        ) : (
-          <WarningAlert text=" " />
-        )}
         <Welcome />
+        <WarningAlert text={this.state.warningText} />
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
