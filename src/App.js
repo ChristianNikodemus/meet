@@ -6,8 +6,9 @@ import NumberOfEvents from "./NumberOfEvents";
 import Welcome from "./Welcome.js";
 import EventGenre from "./EventGenre";
 import EventNumber from "./EventNumber";
+import WelcomeScreen from "./WelcomeScreen";
 import { WarningAlert } from "./Alert";
-import { getEvents, extractLocations } from "./api";
+import { getEvents, extractLocations, checkToken, getAccessToken } from "./api";
 import "./nprogress.css";
 
 class App extends Component {
@@ -16,27 +17,35 @@ class App extends Component {
     locations: [],
     events: [],
     numberOfEvents: 12,
+    showWelcomeScreen: undefined,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
-      }
+    const accessToken = localStorage.getItem("access_token");
+    const isTokenValid = (await checkToken(accessToken)).error ? false : true;
+    const searchParams = new URLSearchParams(window.location.search);
+    const code = searchParams.get("code");
+    this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+    if ((code || isTokenValid) && this.mounted) {
+      getEvents().then((events) => {
+        if (this.mounted) {
+          this.setState({ events, locations: extractLocations(events) });
+        }
 
-      if (!navigator.onLine) {
-        this.setState({
-          warningText:
-            "You are offline! This means the list of events is loaded from cache files. This means that the events may not be completely up to date until you connect online again.",
-        });
-        console.log("offline mode");
-      } else {
-        this.setState({
-          warningText: "",
-        });
-      }
-    });
+        if (!navigator.onLine) {
+          this.setState({
+            warningText:
+              "You are offline! This means the list of events is loaded from cache files. This means that the events may not be completely up to date until you connect online again.",
+          });
+          console.log("offline mode");
+        } else {
+          this.setState({
+            warningText: "",
+          });
+        }
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -65,6 +74,9 @@ class App extends Component {
   render() {
     const events = this.state.events.slice(0, this.state.numberOfEvents);
 
+    if (this.state.showWelcomeScreen === undefined)
+      return <div className="App" />;
+
     return (
       <div className="App">
         <Welcome />
@@ -83,6 +95,13 @@ class App extends Component {
         </div>
 
         <EventList events={events} />
+
+        <WelcomeScreen
+          showWelcomeScreen={this.state.showWelcomeScreen}
+          getAccessToken={() => {
+            getAccessToken();
+          }}
+        />
       </div>
     );
   }
