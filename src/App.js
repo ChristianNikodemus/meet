@@ -33,17 +33,17 @@ class App extends Component {
           this.setState({ events, locations: extractLocations(events) });
         }
 
-        if (!navigator.onLine) {
-          this.setState({
-            warningText:
-              "You are offline! This means the list of events is loaded from cache files. This means that the events may not be completely up to date until you connect online again.",
-          });
-          console.log("offline mode");
-        } else {
-          this.setState({
-            warningText: "",
-          });
-        }
+        // if (!navigator.onLine) {
+        //   this.setState({
+        //     warningText:
+        //       "You are offline! This means the list of events is loaded from cache files. This means that the events may not be completely up to date until you connect online again.",
+        //   });
+        //   console.log("offline mode");
+        // } else {
+        //   this.setState({
+        //     warningText: "",
+        //   });
+        // }
       });
     }
   }
