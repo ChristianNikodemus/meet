@@ -29,7 +29,7 @@ o.svg"
           </button>
         </div>
       </div>
-      <a href="../public/privacy.html" rel="nofollow noopener">
+      <a href="./privacy.html" rel="nofollow noopener">
         Privacy policy
       </a>
     </div>
