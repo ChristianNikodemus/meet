@@ -1,4 +1,4 @@
-# Overview
+# Meet
 
 Welcome to my application called Meet. This project uses the front end framework: React, to compliment my API Database!
 
@@ -34,7 +34,7 @@ To build a serverless, progressive web application (PWA) with React using a test
 - The API call uses React axios and async/await.
 - The app implements an alert system using an OOP approach to show information to the
   user.
-- The app must make use of data visualization (recharts preferred).
+- The app must make use of data visualization (recharts: https://recharts.org).
 - The app is covered by tests with a coverage rate >= 90%.
 - The app is monitored using an online monitoring tool.
 
