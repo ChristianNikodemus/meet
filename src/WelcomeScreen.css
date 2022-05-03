@@ -6,6 +6,10 @@
   background: white;
 }
 
+.WelcomeScreen-text{
+  margin-top: 2em;
+}
+
 .login-button {
   color: #494949;
   text-transform: uppercase;
@@ -63,4 +67,5 @@
   width: 80%;
   height: 100%;
   text-align: center;
+  margin: 0 !important;
 }
