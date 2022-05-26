@@ -121,13 +121,7 @@ input[type="number"] {
   box-shadow: var(--box-shadow);
 }
 
-/* .suggestions > li:last-child {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-} */
-
 .suggestions > li:hover {
-  /* background-color: #bcdcdb; */
   background-color: var(--blue);
   color: white;
 }
